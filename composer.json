@@ -1,0 +1,115 @@
+{
+    "name": "yiisoft/yii2-app-basic",
+    "description": "Yii 2 Basic Project Template",
+    "keywords": ["yii2", "framework", "basic", "project template"],
+    "homepage": "http://www.yiiframework.com/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
+        "forum": "http://www.yiiframework.com/forum/",
+        "wiki": "http://www.yiiframework.com/wiki/",
+        "irc": "irc://irc.freenode.net/yii",
+        "source": "https://github.com/yiisoft/yii2"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "~2.0.14",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "~2.0.0",
+        "kartik-v/yii2-password": "~1.0",
+        "kartik-v/yii2-widget-datepicker": "~1.4",
+        "kartik-v/yii2-widget-select2": "~2.1",
+        "kartik-v/yii2-date-range": "dev-master",
+        "kartik-v/yii2-widget-datetimepicker": "*",
+        "kartik-v/yii2-mpdf": "dev-master",
+        "bower-asset/bootstrap" : "~3.3",
+        "bower-asset/jquery"    : ">=3.2",
+
+        "bower-asset/nestable2"    : "~1.6",
+        "bower-asset/fullcalendar"    : "~2.5",
+
+        "bower-asset/blueimp-file-upload" : "~9.28",
+
+        "linslin/yii2-curl" : "~1.2",
+        "openlss/lib-array2xml": "dev-master",
+        "econea/nusoap": "dev-master",
+
+        "bower-asset/pace" : "~1.0",
+       
+        "bower-asset/notifyjs" : "dev-master",
+        "bower-asset/waypoints" : "~4.0",
+        "bower-asset/html2canvas": "dev-master",
+        "bower-asset/bootstrap-wizard": "~1.4",
+        "bower-asset/font-awesome": "~4.7",
+
+        "bower-asset/bootstrap-table": "~1.16",
+
+        "bower-asset/bootstrapvalidator": "dev-master",
+        "bower-asset/bootbox": "~5.1",
+
+        "bower-asset/animate.css": "~3.7",
+
+        "bower-asset/mdi": "~3.5",
+        "bower-asset/ionicons": "~5.2",
+
+        "bower-asset/col-resizable": "dev-master",
+        "bower-asset/html.sortable" : "~0.9",
+
+        "bower-asset/bootstrap-select" : "~1.13",
+        "bower-asset/jquery.print" : "~1.6",
+
+        "bower-asset/highcharts" : "~6.1",
+        "2amigos/qrcode-library": "~1.1"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.0.0",
+        "yiisoft/yii2-gii": "~2.0.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+
+        "codeception/base": "^2.2.3",
+        "codeception/verify": "~0.3.1",
+        "codeception/specify": "~0.4.3"
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": true
+        },
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "yii\\composer\\Installer::postInstall"
+        ],
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject",
+            "yii\\composer\\Installer::postInstall"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ]
+        },
+        "yii\\composer\\Installer::postInstall": {
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}
